@@ -1,6 +1,12 @@
+import { Button } from "./components/ui/button"
+
 function App() {
   return (
-    <h1 className="text-white text-8xl font-bold flex items-center justify-center bg-emerald-800 w-screen h-screen">Ready to Code!</h1>
+    <div className="text-white text-4xl font-bold flex flex-col items-center justify-center bg-emerald-800 w-screen h-screen gap-12">
+      <h1>Ready to Code!</h1>
+
+      <Button>Click-me!</Button>
+    </div>
   )
 }
 

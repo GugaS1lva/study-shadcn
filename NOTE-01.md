@@ -33,3 +33,75 @@ main.tsx
 import './global.css'
 ```
 
+Instalar Shadcn-UI - [ Siga os passos acima também. ]
+
+```bash
+tsconfig.json
+
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+> "compilerOptions": {
+>   "baseUrl": ".",
+>   "paths": {
+>     "@/*": ["./src/*"]
+>   }
+> }
+}
+```
+
+```bash
+tsconfig.app.json
+
+{
+  "compilerOptions": {
+    // ...
+>   "baseUrl": ".",
+>   "paths": {
+>     "@/*": [
+>       "./src/*"
+>     ]
+>   }
+    // ...
+  }
+}
+```
+
+```bash
+npm install -D @types/node
+```
+
+```bash
+vite.config.ts
+
+> import path from "path"
+> import tailwindcss from "@tailwindcss/vite"
+  import react from "@vitejs/plugin-react"
+  import { defineConfig } from "vite"
+  
+  // https://vite.dev/config/
+  export default defineConfig({
+>   plugins: [react(), tailwindcss()],
+>   resolve: {
+>     alias: {
+>       "@": path.resolve(__dirname, "./src"),
+>     },
+>   },
+  })
+```
+
+```bash
+npx shadcn@latest init
+```
+
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add button table dialog 
+```
